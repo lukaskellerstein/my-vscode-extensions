@@ -1,0 +1,2 @@
+
+Need to create a VSCode extension that will open a dialog (similar like on `Ctrl+P`) with a list of currently running TMUX sessions. When I choose one, it will open a new window in the TMUX session in the current location of the file where I hit a predefined keyboard shortcut (`Ctrl+t`). I suppose we will define the keyboard shortcut in the file `keybindings.json`.

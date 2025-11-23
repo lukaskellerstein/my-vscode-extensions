@@ -1,0 +1,47 @@
+{
+  "name": "tmux-manager",
+  "displayName": "TMUX Manager",
+  "description": "Manage and open TMUX sessions directly from VSCode",
+  "version": "0.0.1",
+  "publisher": "lukaskellerstein",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:tmux-manager.openSession"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tmux-manager.openSession",
+        "title": "TMUX: Open Session"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "tmux-manager.openSession",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
