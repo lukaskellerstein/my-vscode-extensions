@@ -2,7 +2,7 @@
   "name": "tmux-manager",
   "displayName": "TMUX Manager",
   "description": "Manage and open TMUX sessions directly from VSCode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "lukaskellerstein",
   "engines": {
     "vscode": "^1.85.0"
@@ -34,7 +34,9 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts"
+    "lint": "eslint src --ext ts",
+    "package": "vsce package --allow-missing-repository",
+    "install-extension": "npm run package && code --install-extension tmux-manager-0.0.2.vsix"
   },
   "devDependencies": {
     "@types/node": "20.x",

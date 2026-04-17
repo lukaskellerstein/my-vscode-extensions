@@ -1,0 +1,46 @@
+{
+  "name": "nested-repo-highlighter",
+  "displayName": "Nested Repo Highlighter",
+  "description": "Highlights folders in the Explorer that contain their own .git entry (nested repos that are not submodules).",
+  "version": "0.0.2",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Nested Repo Highlighter",
+      "properties": {
+        "nestedRepoHighlighter.color": {
+          "type": "string",
+          "default": "charts.blue",
+          "description": "Theme color ID used to tint folders that contain a .git entry. Must be a valid VS Code theme color ID."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "nested-repo-highlighter.refresh",
+        "title": "Nested Repo Highlighter: Refresh"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.3"
+  }
+}
